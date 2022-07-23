@@ -1,0 +1,37 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ENDFFPET is
+    port(
+        SETN, RESETN, CLK, D, EN: in std_logic;
+        Q: out std_logic
+    );
+end;
+
+architecture Structural of ENDFFPET is
+    component DFFPET is
+        port(
+            SETN, RESETN, CLK, D: in std_logic;
+            Q, QN: out std_logic
+        );
+    end component;
+    signal enableDFFQ: std_logic := '0';
+begin
+    enableDFF: DFFPET
+    port map(
+        SETN => SETN,
+        RESETN => RESETN,
+        CLK => EN,
+        D => D,
+        Q => enableDFFQ
+    );
+    
+    dataDFF: DFFPET
+    port map(
+        SETN => SETN,
+        RESETN => RESETN,
+        CLK => CLK,
+        D => enableDFFQ,
+        Q => Q
+    );
+end;

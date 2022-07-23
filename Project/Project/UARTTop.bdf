@@ -1,0 +1,452 @@
+/*
+WARNING: Do NOT edit the input and output ports in this file in a text
+editor if you plan to continue editing the block that represents it in
+the Block Editor! File corruption is VERY likely to occur.
+*/
+/*
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+*/
+(header "graphic" (version "1.4"))
+(pin
+	(input)
+	(rect 344 264 512 280)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "RxD" (rect 5 0 27 12)(font "Arial" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 304 232 512 248)
+	(text "INPUT" (rect 165 0 193 10)(font "Arial" (font_size 6)))
+	(text "StateInformation[3..0]" (rect 5 0 113 12)(font "Arial" ))
+	(pt 208 8)
+	(drawing
+		(line (pt 124 12)(pt 149 12))
+		(line (pt 124 4)(pt 149 4))
+		(line (pt 153 8)(pt 208 8))
+		(line (pt 124 12)(pt 124 4))
+		(line (pt 149 4)(pt 153 8))
+		(line (pt 149 12)(pt 153 8))
+	)
+	(text "VCC" (rect 168 7 188 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 344 200 512 216)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "UARTClock" (rect 5 0 59 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 344 152 512 168)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "GClock" (rect 5 0 39 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(input)
+	(rect 344 168 512 184)
+	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
+	(text "GReset" (rect 5 0 39 17)(font "Intel Clear" ))
+	(pt 168 8)
+	(drawing
+		(line (pt 84 12)(pt 109 12))
+		(line (pt 84 4)(pt 109 4))
+		(line (pt 113 8)(pt 168 8))
+		(line (pt 84 12)(pt 84 4))
+		(line (pt 109 4)(pt 113 8))
+		(line (pt 109 12)(pt 113 8))
+	)
+	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
+)
+(pin
+	(output)
+	(rect 792 264 968 280)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "TxD" (rect 90 0 110 12)(font "Arial" ))
+	(pt 0 8)
+	(drawing
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
+	)
+)
+(symbol
+	(rect 488 520 696 712)
+	(text "UART" (rect 5 0 39 19)(font "Intel Clear" (font_size 8)))
+	(text "instUART" (rect 8 171 51 188)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "GClock" (rect 0 0 41 19)(font "Intel Clear" (font_size 8)))
+		(text "GClock" (rect 21 27 62 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "GReset" (rect 0 0 42 19)(font "Intel Clear" (font_size 8)))
+		(text "GReset" (rect 21 43 63 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "UARTClock" (rect 0 0 66 19)(font "Intel Clear" (font_size 8)))
+		(text "UARTClock" (rect 21 59 87 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "ReceiverReset" (rect 0 0 83 19)(font "Intel Clear" (font_size 8)))
+		(text "ReceiverReset" (rect 21 75 104 94)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "Address[1..0]" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "Address[1..0]" (rect 21 91 100 110)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 0 112)
+		(input)
+		(text "Read1Write0" (rect 0 0 79 19)(font "Intel Clear" (font_size 8)))
+		(text "Read1Write0" (rect 21 107 100 126)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 112)(pt 16 112))
+	)
+	(port
+		(pt 0 128)
+		(input)
+		(text "DataRx[7..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "DataRx[7..0]" (rect 21 123 94 142)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 128)(pt 16 128)(line_width 3))
+	)
+	(port
+		(pt 0 144)
+		(input)
+		(text "Send" (rect 0 0 30 19)(font "Intel Clear" (font_size 8)))
+		(text "Send" (rect 21 139 51 158)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 144)(pt 16 144))
+	)
+	(port
+		(pt 0 160)
+		(input)
+		(text "RxD" (rect 0 0 23 19)(font "Intel Clear" (font_size 8)))
+		(text "RxD" (rect 21 155 44 174)(font "Intel Clear" (font_size 8)))
+		(line (pt 0 160)(pt 16 160))
+	)
+	(port
+		(pt 208 32)
+		(output)
+		(text "DataTx[7..0]" (rect 0 0 73 19)(font "Intel Clear" (font_size 8)))
+		(text "DataTx[7..0]" (rect 114 27 187 46)(font "Intel Clear" (font_size 8)))
+		(line (pt 208 32)(pt 192 32)(line_width 3))
+	)
+	(port
+		(pt 208 48)
+		(output)
+		(text "TxD" (rect 0 0 23 19)(font "Intel Clear" (font_size 8)))
+		(text "TxD" (rect 164 43 187 62)(font "Intel Clear" (font_size 8)))
+		(line (pt 208 48)(pt 192 48))
+	)
+	(port
+		(pt 208 64)
+		(output)
+		(text "IRQ[1..0]" (rect 0 0 51 19)(font "Intel Clear" (font_size 8)))
+		(text "IRQ[1..0]" (rect 136 59 187 78)(font "Intel Clear" (font_size 8)))
+		(line (pt 208 64)(pt 192 64)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 192 176))
+	)
+)
+(symbol
+	(rect 472 328 752 472)
+	(text "UARTFSM" (rect 5 0 56 12)(font "Arial" ))
+	(text "instUARTFSM" (rect 8 128 77 140)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "GClock" (rect 0 0 36 12)(font "Arial" ))
+		(text "GClock" (rect 21 27 57 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "GReset" (rect 0 0 37 12)(font "Arial" ))
+		(text "GReset" (rect 21 43 58 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "StateInformation[3..0]" (rect 0 0 108 12)(font "Arial" ))
+		(text "StateInformation[3..0]" (rect 21 59 129 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64)(line_width 3))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "DataRx[7..0]" (rect 0 0 63 12)(font "Arial" ))
+		(text "DataRx[7..0]" (rect 21 75 84 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "IRQ[1..0]" (rect 0 0 46 12)(font "Arial" ))
+		(text "IRQ[1..0]" (rect 21 91 67 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96)(line_width 3))
+	)
+	(port
+		(pt 280 32)
+		(output)
+		(text "UARTReceiverReset" (rect 0 0 103 12)(font "Arial" ))
+		(text "UARTReceiverReset" (rect 172 27 275 39)(font "Arial" ))
+		(line (pt 280 32)(pt 264 32))
+	)
+	(port
+		(pt 280 48)
+		(output)
+		(text "Address[1..0]" (rect 0 0 66 12)(font "Arial" ))
+		(text "Address[1..0]" (rect 204 43 270 55)(font "Arial" ))
+		(line (pt 280 48)(pt 264 48)(line_width 3))
+	)
+	(port
+		(pt 280 64)
+		(output)
+		(text "Read1Write0" (rect 0 0 63 12)(font "Arial" ))
+		(text "Read1Write0" (rect 206 59 269 71)(font "Arial" ))
+		(line (pt 280 64)(pt 264 64))
+	)
+	(port
+		(pt 280 80)
+		(output)
+		(text "DataTx[7..0]" (rect 0 0 61 12)(font "Arial" ))
+		(text "DataTx[7..0]" (rect 208 75 269 87)(font "Arial" ))
+		(line (pt 280 80)(pt 264 80)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 264 128))
+	)
+)
+(connector
+	(text "SI[3..0]" (rect 522 224 553 241)(font "Intel Clear" ))
+	(pt 512 240)
+	(pt 560 240)
+	(bus)
+)
+(connector
+	(text "SI[3..0]" (rect 434 376 465 393)(font "Intel Clear" ))
+	(pt 424 392)
+	(pt 472 392)
+	(bus)
+)
+(connector
+	(text "GReset" (rect 434 360 468 377)(font "Intel Clear" ))
+	(pt 472 376)
+	(pt 424 376)
+)
+(connector
+	(pt 408 480)
+	(pt 408 408)
+	(bus)
+)
+(connector
+	(pt 472 408)
+	(pt 408 408)
+	(bus)
+)
+(connector
+	(pt 408 480)
+	(pt 792 480)
+	(bus)
+)
+(connector
+	(pt 792 552)
+	(pt 696 552)
+	(bus)
+)
+(connector
+	(pt 792 480)
+	(pt 792 552)
+	(bus)
+)
+(connector
+	(text "UARTClock" (rect 514 192 568 209)(font "Intel Clear" ))
+	(pt 512 208)
+	(pt 560 208)
+)
+(connector
+	(text "GReset" (rect 522 160 556 177)(font "Intel Clear" ))
+	(pt 512 176)
+	(pt 560 176)
+)
+(connector
+	(text "GClock" (rect 522 144 556 161)(font "Intel Clear" ))
+	(pt 512 160)
+	(pt 560 160)
+)
+(connector
+	(text "RxD" (rect 522 256 540 273)(font "Intel Clear" ))
+	(pt 512 272)
+	(pt 560 272)
+)
+(connector
+	(text "TxD" (rect 754 256 771 273)(font "Intel Clear" ))
+	(pt 792 272)
+	(pt 744 272)
+)
+(connector
+	(text "TxD" (rect 706 552 723 569)(font "Intel Clear" ))
+	(pt 744 568)
+	(pt 696 568)
+)
+(connector
+	(text "IRQ[1..0]" (rect 706 568 747 585)(font "Intel Clear" ))
+	(pt 696 584)
+	(pt 744 584)
+	(bus)
+)
+(connector
+	(text "GReset" (rect 434 552 468 569)(font "Intel Clear" ))
+	(pt 488 568)
+	(pt 424 568)
+)
+(connector
+	(text "UARTClock" (rect 426 568 480 585)(font "Intel Clear" ))
+	(pt 488 584)
+	(pt 424 584)
+)
+(connector
+	(text "Address[1..0]" (rect 426 600 487 617)(font "Intel Clear" ))
+	(pt 488 616)
+	(pt 424 616)
+	(bus)
+)
+(connector
+	(text "Read1Write0" (rect 426 616 488 633)(font "Intel Clear" ))
+	(pt 488 632)
+	(pt 424 632)
+)
+(connector
+	(pt 488 648)
+	(pt 408 648)
+	(bus)
+)
+(connector
+	(pt 408 504)
+	(pt 408 648)
+	(bus)
+)
+(connector
+	(text "Send" (rect 434 648 457 665)(font "Intel Clear" ))
+	(pt 488 664)
+	(pt 424 664)
+)
+(connector
+	(text "RxD" (rect 434 664 452 681)(font "Intel Clear" ))
+	(pt 488 680)
+	(pt 424 680)
+)
+(connector
+	(text "IRQ[1..0]" (rect 434 408 475 425)(font "Intel Clear" ))
+	(pt 424 424)
+	(pt 472 424)
+	(bus)
+)
+(connector
+	(text "ReceiverReset" (rect 426 584 494 601)(font "Intel Clear" ))
+	(pt 488 600)
+	(pt 424 600)
+)
+(connector
+	(text "Address[1..0]" (rect 754 360 815 377)(font "Intel Clear" ))
+	(pt 752 376)
+	(pt 800 376)
+	(bus)
+)
+(connector
+	(text "Read1Write0" (rect 754 376 816 393)(font "Intel Clear" ))
+	(pt 752 392)
+	(pt 800 392)
+)
+(connector
+	(text "ReceiverReset" (rect 754 344 822 361)(font "Intel Clear" ))
+	(pt 752 360)
+	(pt 800 360)
+)
+(connector
+	(pt 752 408)
+	(pt 776 408)
+	(bus)
+)
+(connector
+	(pt 408 504)
+	(pt 776 504)
+	(bus)
+)
+(connector
+	(pt 776 504)
+	(pt 776 408)
+	(bus)
+)
+(connector
+	(text "UARTClock" (rect 434 536 488 553)(font "Intel Clear" ))
+	(pt 488 552)
+	(pt 424 552)
+)
+(connector
+	(text "UARTClock" (rect 426 344 480 361)(font "Intel Clear" ))
+	(pt 472 360)
+	(pt 424 360)
+)

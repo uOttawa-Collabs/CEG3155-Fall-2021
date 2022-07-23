@@ -1,0 +1,109 @@
+library ieee;
+use ieee.std_logic_1164.all;
+
+entity ShiftRegister is
+    port(
+        LOAD, RESETN: in std_logic;
+        SHL, SHR: in std_logic;
+        CLK: in std_logic;
+        INPUT: in std_logic_vector(7 downto 0);
+        OUTPUT: out std_logic_vector(7 downto 0)
+    );
+end ShiftRegister;
+
+architecture Structural OF ShiftRegister is
+    signal signalDFF: std_logic_vector(7 downto 0);
+    
+    component ENDFFPET
+        port(
+            SETN: in std_logic;
+            RESETN: in std_logic;
+            D: in std_logic;
+            EN: in std_logic;
+            CLK: in std_logic;
+            Q: out std_logic
+        );
+    end component;
+begin
+    DFF7: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(6)) or (SHR and signalDFF(0)) or (LOAD and INPUT(7))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(7),
+        CLK => CLK
+    );
+
+    DFF6: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(5)) or (SHR and signalDFF(7)) or (LOAD and INPUT(6))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(6),
+        CLK => CLK
+    );
+
+    DFF5: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(4)) or (SHR and signalDFF(6)) or (LOAD and INPUT(5))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(5),
+        CLK => CLK
+    );
+
+    DFF4: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(3)) or (SHR and signalDFF(5)) or (LOAD and INPUT(4))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(4),
+        CLK => CLK
+    );
+
+    DFF3: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(2)) or (SHR and signalDFF(4)) or (LOAD and INPUT(3))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(3),
+        CLK => CLK
+    );
+
+    DFF2: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(1)) or (SHR and signalDFF(3)) or (LOAD and INPUT(2))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(2),
+        CLK => CLK
+    );
+
+    DFF1: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(0)) or (SHR and signalDFF(2)) or (LOAD and INPUT(1))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(1),
+        CLK => CLK
+    );
+
+    DFF0: ENDFFPET
+    port map(
+        SETN => '1',
+        RESETN => RESETN,
+        D => ((SHL and signalDFF(7)) or (SHR and signalDFF(1)) or (LOAD and INPUT(0))),
+        EN => (SHL or SHR or LOAD),
+        Q => signalDFF(0),
+        CLK => CLK
+    );
+    
+    OUTPUT <= signalDFF;
+end;
